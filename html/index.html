@@ -77,6 +77,34 @@ $(document).ready(function() {
 			}
 	});
 
+	//	carouFredSel team
+	$('#team_inner .carousel.main ul').carouFredSel({
+		auto: {
+			timeoutDuration: 8000
+		},
+		responsive: true,
+		prev: '.team_prev',
+		next: '.team_next',
+		width: '100%',
+		scroll: {
+			items: 1,
+			duration: 1000,
+			easing: "easeOutExpo"
+		},
+		items: {
+        	width: '200',
+			height: 'variable',	//	optionally resize item-height
+			visible: {
+				min: 1,
+				max: 6
+			}
+		},
+		mousewheel: false,
+		swipe: {
+			onMouse: true,
+			onTouch: true
+			}
+	});
 
 
 
@@ -194,13 +222,14 @@ $(window).load(function() {
 				<li>
 					<div class="banner">
 						<div class="banner_inner">
-							<a href="#">
+							<a href="Konzept.html#Eingewöhnung">
 								<div class="txt1">Eingewöhnung</div>
 								<figure><img src="images/banner1.png" alt="" class="img"></figure>
 								<div class="txt2">
-									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing.
+										Eingewöhnung und den eigenen Platz finden - das Kind macht dabei erste wichtige Erfahrungen für seine Entwicklung:
+										Es lernt, sich von den Eltern zu lösen und zeitweise ohne sie zurechtzukommen.
 								</div>
-								<div class="txt3">more</div>
+								<div class="txt3">Mehr lesen</div>
 							</a>
 						</div>
 					</div>
@@ -208,13 +237,15 @@ $(window).load(function() {
 				<li>
 					<div class="banner">
 						<div class="banner_inner">
-							<a href="#">
+							<a href="Konzept.html#Teiloffen">
 								<div class="txt1">teiloffene Arbeit in Funktionsräumen</div>
 								<figure><img src="images/banner2.png" alt="" class="img"></figure>
 								<div class="txt2">
-									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing.
-								</div>
-								<div class="txt3">more</div>
+										In unserer Kindertagesstätte orientieren wir uns am offenen Konzept und praktizieren eine teiloffene Arbeit. 
+										Das bedeutet für uns in der Praxis, dass alle Kindergartenkinder einer festen Gruppe angehören, sich aber während 
+										der Freispielzeit in allen Gruppen und im Außengelände frei bewegen, spielen und ausleben können
+									</div>
+								<div class="txt3">Mehr lesen</div>
 							</a>
 						</div>
 					</div>
@@ -222,13 +253,13 @@ $(window).load(function() {
 				<li>
 					<div class="banner">
 						<div class="banner_inner">
-							<a href="#">
+							<a href="Konzept.html#Bewegung">
 								<div class="txt1">Bewegung</div>
 								<figure><img src="images/banner3.png" alt="" class="img"></figure>
 								<div class="txt2">
 									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing.
 								</div>
-								<div class="txt3">more</div>
+								<div class="txt3">Mehr lesen</div>
 							</a>
 						</div>
 					</div>
@@ -236,13 +267,13 @@ $(window).load(function() {
 				<li>
 					<div class="banner">
 						<div class="banner_inner">
-							<a href="#">
+							<a href="Konzept.html#Draußen">
 								<div class="txt1">Draußen bei (fast) jedem Wetter</div>
 								<figure><img src="images/banner1.png" alt="" class="img"></figure>
 								<div class="txt2">
 									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing.
 								</div>
-								<div class="txt3">more</div>
+								<div class="txt3">Mehr lesen</div>
 							</a>
 						</div>
 					</div>
@@ -250,13 +281,13 @@ $(window).load(function() {
 				<li>
 					<div class="banner">
 						<div class="banner_inner">
-							<a href="#">
+							<a href="Konzept.html#Musik">
 								<div class="txt1">musikalische Bildung</div>
 								<figure><img src="images/banner2.png" alt="" class="img"></figure>
 								<div class="txt2">
 									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing.
 								</div>
-								<div class="txt3">more</div>
+								<div class="txt3">Mehr lesen</div>
 							</a>
 						</div>
 					</div>
@@ -264,13 +295,13 @@ $(window).load(function() {
 				<li>
 					<div class="banner">
 						<div class="banner_inner">
-							<a href="#">
+							<a href="Konzept.html#DEssen">
 								<div class="txt1">Gemeinsam Essen</div>
 								<figure><img src="images/banner3.png" alt="" class="img"></figure>
 								<div class="txt2">
 									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing.
 								</div>
-								<div class="txt3">more</div>
+								<div class="txt3">Mehr lesen</div>
 							</a>
 						</div>
 					</div>
@@ -317,6 +348,178 @@ Vom Personal wird unter den bisherigen Dingen eine besondere Motivation verlangt
 </div>
 </div>
 </div>
+
+<div id="content3">
+	<div class="container">
+	<div class="row">
+	<div class="span12">
+		
+		<h2>Our Team</h2>
+		
+		<div id="team_wrapper">
+					<div class="">
+					<div id="team_inner">
+					<a class="team_prev" href="#"></a>
+					<a class="team_next" href="#"></a>
+					<div class="carousel-box">
+						<div class="inner">
+							<div class="carousel main">
+								<ul>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about02.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Claudia
+													</div>
+													<div class="txt2">Erzieherin</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about03.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Yvonne
+													</div>
+													<div class="txt2">Sozialassistentin</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about04.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Rami
+													</div>
+													<div class="txt2">Praktikant</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about05.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Sabrina
+													</div>
+													<div class="txt2">Erzieherin</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about06.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Saskia
+													</div>
+													<div class="txt2">Sozialassistentin</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about07.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Saskia
+													</div>
+													<div class="txt2">Sozialassistentin</div>
+												</a>
+											</div>
+										</div>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about03.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Silke
+													</div>
+													<div class="txt2">Leitung</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about04.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Nadine
+													</div>
+													<div class="txt2">Leitung</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about05.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														N.N
+													</div>
+													<div class="txt2">Sozialassistentin</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about06.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														N.N.
+													</div>
+													<div class="txt2">Erzieherin</div>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="team">
+											<div class="team_inner">
+												<a href="#">
+													<figure><img src="images/about07.jpg" alt="" class="img"></figure>
+													<div class="txt1">
+														Christin
+													</div>
+													<div class="txt2">Erzieherin</div>
+												</a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+			</div>
+		
+		
+		</div>
+		</div>
+		</div>
+	</div>
 
 <div id="content2">
 <div class="container">
@@ -366,10 +569,19 @@ Bevor das Projekt „Mathebrücke“ startet, findet immer ein Themen-Elternaben
 	</div>
 </div>
 
+
+
+
+
 </div>
 </div>
 </div>
 </div>
+
+
+
+
+
 
 <div class="bot1">
 <div class="container">
@@ -396,16 +608,19 @@ E-mail: <a href="#">st.marienkita.suelfeld@gmx.de</a>
 </div>
 <div class="span4">
 
-<div class="bot1_title">Follow Us</div>
 
-<div class="social_wrapper">
+
+
+<!-- <div class="bot1_title">Follow Us</div> -->
+
+<!-- <div class="social_wrapper">
 	<ul class="social clearfix">
 	    <li><a href="#"><img src="images/social_ic1.png"></a></li>
 	    <li><a href="#"><img src="images/social_ic2.png"></a></li>
 	    <li><a href="#"><img src="images/social_ic3.png"></a></li>
 	    <li><a href="#"><img src="images/social_ic4.png"></a></li>
 	</ul>
-</div>
+</div> -->
 
 </div>
 </div>
