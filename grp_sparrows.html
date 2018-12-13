@@ -12,6 +12,8 @@
 
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/isotope.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -19,6 +21,9 @@
 <script type="text/javascript" src="js/superfish.js"></script>
 
 <script type="text/javascript" src="js/jquery.ui.totop.js"></script>
+
+<script type="text/javascript" src="js/touchTouch.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 <script>
 $(document).ready(function() {
 
@@ -28,7 +33,37 @@ $(document).ready(function() {
 
 }); //
 $(window).load(function() {
-	//
+	//isotop
+	var $container = $('#isotope-items'),
+		$optionSet = $('#isotope-options'),
+	    $optionSets = $('#isotope-filters'),
+	    $optionLinks = $optionSets.find('a');
+    $container.isotope({
+        filter: '*',
+        layoutMode: 'fitRows'
+    });
+   	$optionLinks.click(function(){
+   		var $this = $(this);
+    	// don't proceed if already selected
+		if ( $this.hasClass('selected') ) {
+			return false;
+		}
+   		$optionSet.find('.selected').removeClass('selected');
+   		$this.addClass('selected');
+
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector
+        });
+      	return false;
+    });
+	$(window).on("resize", function( event ) {
+		$container.isotope('reLayout');
+	});
+
+	// touchTouch
+	$('.thumb-isotope .thumbnail a').touchTouch();
+
 
 }); //
 </script>
@@ -300,9 +335,9 @@ $(window).load(function() {
 	<li class="span3 isotope-element isotope-filter1">
 		<div class="thumb-isotope">
 			<div class="thumbnail clearfix">
-				<a href="images/blank.png">
+				<a href="images/sparrows_group_1_big.jpg">
 					<figure>
-						<img src="images/gallery01.jpg" alt=""><em></em>
+						<img src="images/sparrows_group_1.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">
 						Kreativ mit Holzbausteinen
@@ -314,9 +349,9 @@ $(window).load(function() {
 	<li class="span3 isotope-element isotope-filter2">
 		<div class="thumb-isotope">
 			<div class="thumbnail clearfix">
-				<a href="images/blank.png">
+				<a href="images/sparrows_bath_1.jpg">
 					<figure>
-						<img src="images/gallery02.jpg" alt=""><em></em>
+						<img src="images/sparrows_bath_1.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">
 						Der Duplo-Konstruktor
