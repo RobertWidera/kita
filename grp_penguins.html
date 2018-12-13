@@ -12,6 +12,8 @@
 
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/isotope.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -19,6 +21,9 @@
 <script type="text/javascript" src="js/superfish.js"></script>
 
 <script type="text/javascript" src="js/jquery.ui.totop.js"></script>
+
+<script type="text/javascript" src="js/touchTouch.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 <script>
 $(document).ready(function() {
 
@@ -28,18 +33,39 @@ $(document).ready(function() {
 
 }); //
 $(window).load(function() {
-	//
+	//isotop
+	var $container = $('#isotope-items'),
+		$optionSet = $('#isotope-options'),
+	    $optionSets = $('#isotope-filters'),
+	    $optionLinks = $optionSets.find('a');
+    $container.isotope({
+        filter: '*',
+        layoutMode: 'fitRows'
+    });
+   	$optionLinks.click(function(){
+   		var $this = $(this);
+    	// don't proceed if already selected
+		if ( $this.hasClass('selected') ) {
+			return false;
+		}
+   		$optionSet.find('.selected').removeClass('selected');
+   		$this.addClass('selected');
 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector
+        });
+      	return false;
+    });
+	$(window).on("resize", function( event ) {
+		$container.isotope('reLayout');
+	});
+
+	// touchTouch
+	$('.thumb-isotope .thumbnail a').touchTouch();
 }); //
 </script>
-<!--[if lt IE 8]>
-		<div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
-	<![endif]-->
 
-<!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
-<![endif]-->
 </head>
 
 <body>
@@ -132,11 +158,11 @@ $(window).load(function() {
 	<div class="row">
 	<div class="span9">
 	
-		<h1>Die Pinguine</h1>
+		<h1>Die Pinguine - Bauen und Konstruieren</h1>
 	
 	<div class="thumb3">
 		<div class="thumbnail clearfix">
-			<figure class="img-circle"><img src="images/icon_lion.jpg" alt=""></figure>
+			<figure class="img-circle"><img src="images/icon_pinguin.jpg" alt=""></figure>
 			<div class="caption">
 				<p>
 					In der Pinguingruppe bieten wir den Kindern unterschiedliche Bau- und Konstruktionsmaterialien, 
@@ -207,9 +233,9 @@ $(window).load(function() {
 			<li class="span3 isotope-element isotope-filter1">
 				<div class="thumb-isotope">
 					<div class="thumbnail clearfix">
-						<a href="images/blank.png">
+						<a href="images/wood_train_big.jpg">
 							<figure>
-								<img src="images/gallery01.jpg" alt=""><em></em>
+								<img src="images/wood_train.jpg" alt=""><em></em>
 							</figure>
 							<div class="caption">
 								Kreativ mit Holzbausteinen
@@ -221,9 +247,9 @@ $(window).load(function() {
 			<li class="span3 isotope-element isotope-filter2">
 				<div class="thumb-isotope">
 					<div class="thumbnail clearfix">
-						<a href="images/blank.png">
+						<a href="images/duplo_big.jpg">
 							<figure>
-								<img src="images/gallery02.jpg" alt=""><em></em>
+								<img src="images/duplo.jpg" alt=""><em></em>
 							</figure>
 							<div class="caption">
 								Der Duplo-Konstruktor
@@ -235,9 +261,9 @@ $(window).load(function() {
 			<li class="span3 isotope-element isotope-filter3">
 				<div class="thumb-isotope">
 					<div class="thumbnail clearfix">
-						<a href="images/blank.png">
+						<a href="images/lego_big.jpg">
 							<figure>
-								<img src="images/gallery03.jpg" alt=""><em></em>
+								<img src="images/lego.jpg" alt=""><em></em>
 							</figure>
 							<div class="caption">
 								Bauen mit Legosteinen
@@ -249,9 +275,9 @@ $(window).load(function() {
 			<li class="span3 isotope-element isotope-filter1">
 				<div class="thumb-isotope">
 					<div class="thumbnail clearfix">
-						<a href="images/blank.png">
+						<a href="images/wood_train_big.jpg">
 							<figure>
-								<img src="images/gallery04.jpg" alt=""><em></em>
+								<img src="images/wood_train.jpg" alt=""><em></em>
 							</figure>
 							<div class="caption">
 								Experimentieren mit Murmelbahnen
@@ -270,12 +296,12 @@ $(window).load(function() {
 				<li class="span3 isotope-element isotope-filter1">
 					<div class="thumb-isotope">
 						<div class="thumbnail clearfix">
-							<a>
+							<a href="images/Maria Schönauer.jpg">
 								<figure>
-									<img src="images/about06.jpg" alt=""><em></em>
+									<img src="images/Maria Schönauer.jpg" alt=""><em></em>
 								</figure>
 								<div class="caption">
-									Erzieher 1
+									Anna Vassallo
 								</div>
 							</a>
 						</div>
@@ -284,12 +310,12 @@ $(window).load(function() {
 				<li class="span3 isotope-element isotope-filter2">
 					<div class="thumb-isotope">
 						<div class="thumbnail clearfix">
-							<a>
+							<a href="images/Sherly Klaus.jpg">
 								<figure>
-									<img src="images/about09.jpg" alt=""><em></em>
+									<img src="images/Sherly Klaus.jpg" alt=""><em></em>
 								</figure>
 								<div class="caption">
-									Erzieher 2
+									Monika Streicher
 								</div>
 							</a>
 						</div>
@@ -302,12 +328,12 @@ $(window).load(function() {
 	<li class="span3 isotope-element isotope-filter1">
 		<div class="thumb-isotope">
 			<div class="thumbnail clearfix">
-				<a href="images/blank.png">
+				<a href="images/kita_pinguins_big.jpg">
 					<figure>
-						<img src="images/gallery01.jpg" alt=""><em></em>
+						<img src="images/kita_pinguins.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">
-						Kreativ mit Holzbausteinen
+						untere Spielecke mit Treppenaufgang
 					</div>
 				</a>
 			</div>
@@ -316,40 +342,12 @@ $(window).load(function() {
 	<li class="span3 isotope-element isotope-filter2">
 		<div class="thumb-isotope">
 			<div class="thumbnail clearfix">
-				<a href="images/blank.png">
+				<a href="images/kita_pinguins2_big.jpg">
 					<figure>
-						<img src="images/gallery02.jpg" alt=""><em></em>
+						<img src="images/kita_pinguins2.jpg" alt=""><em></em>
 					</figure>
 					<div class="caption">
-						Der Duplo-Konstruktor
-					</div>
-				</a>
-			</div>
-		</div>
-	</li>
-	<li class="span3 isotope-element isotope-filter3">
-		<div class="thumb-isotope">
-			<div class="thumbnail clearfix">
-				<a href="images/blank.png">
-					<figure>
-						<img src="images/gallery03.jpg" alt=""><em></em>
-					</figure>
-					<div class="caption">
-						Bauen mit Legosteinen
-					</div>
-				</a>
-			</div>
-		</div>
-	</li>
-	<li class="span3 isotope-element isotope-filter1">
-		<div class="thumb-isotope">
-			<div class="thumbnail clearfix">
-				<a href="images/blank.png">
-					<figure>
-						<img src="images/gallery04.jpg" alt=""><em></em>
-					</figure>
-					<div class="caption">
-						Experimentieren mit Murmelbahnen
+						Spielecke im oberen Bereich
 					</div>
 				</a>
 			</div>
